@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invitación Baby Shower</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="baby.css" />
+</head>
+<body>
+  <main class="card" role="article" aria-label="Invitación Baby Shower">
+    <!-- Cabecera semicircular -->
+    <div class="arch" aria-hidden="true"></div>
+
+    <!-- Texto curvo superior -->
+    <div class="arcText" aria-hidden="true">
+      <svg class="arc" viewBox="0 0 600 160">
+        <defs>
+          <path id="curve" d="M 30 140 C 200 10, 400 10, 570 140" />
+        </defs>
+        <text textLength="480">
+          <textPath startOffset="50%" text-anchor="middle" href="#curve">
+            ACOMPÁÑANOS A CELEBRAR
+          </textPath>
+        </text>
+      </svg>
+    </div>
+
+    <!-- Títulos -->
+    <section class="titleBlock">
+      <div class="subtitle">BABY SHOWER</div>
+      <h1 class="name">Eliam Rafael</h1>
+      <p class="lead">Te esperamos el día</p>
+    </section>
+
+    <!-- Fecha y hora -->
+    <div class="dateRow">
+      <div class="pill day">Sábado</div>
+      <div class="monthCol">
+        <div class="month">Septiembre</div>
+        <div class="num" aria-label="Veintiocho">6</div>
+        <div>2025</div>
+      </div>
+      <div class="pill time">5:00 p.m.</div>
+    </div>
+
+    <p class="venue">Salón de Eventos Elleganza</p>
+
+<div class="actionsGrid">
+  <!-- Ver ubicación -->
+  <a class="btn btn-location" href="https://goo.gl/maps/TU_MAPA" target="_blank" rel="noopener">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z" fill="currentColor"/>
+      <circle cx="12" cy="11" r="2.6" fill="#ffffff" opacity=".85"/>
+    </svg>
+    <span>Ver ubicación</span>
+  </a>
+
+  <!-- Sí asistiré -->
+  <a class="btn btn-rsvp" href="https://wa.me/+529212469467?text=Confirmo%20asistencia" target="_blank" rel="noopener">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Sí asistiré</span>
+  </a>
+
+  <!-- Wishlist Amazon -->
+  <a class="btn amazon" href="https://www.amazon.com.mx/hz/wishlist/ls/TU_ID" target="_blank" rel="noopener">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 8h14v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8z" fill="currentColor"/>
+      <path d="M7 8V6a3 3 0 0 1 6 0v2M11 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="#fff" stroke-width="2"/>
+    </svg>
+    <span>Wishlist Amazon</span>
+  </a>
+
+  <!-- Wishlist Liverpool -->
+  <a class="btn liverpool" href="https://www.liverpool.com.mx/tienda/wishlist/TU_ID" target="_blank" rel="noopener">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 8h14v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8z" fill="currentColor"/>
+      <path d="M7 8V6a3 3 0 0 1 6 0v2M11 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="#fff" stroke-width="2"/>
+    </svg>
+    <span>Wishlist Liverpool</span>
+  </a>
+</div>
+
+    <p class="nofaltes">¡No faltes!</p>
+
+    <!-- DECORACIONES (IMÁGENES) -->
+    <!-- Panal/colmena colgante -->
+    <img class="beehive decor" src="Imagenes/honeybee.png" alt="Colmena colgante" />
+
+    <!-- Panal tipo panal de abejas/hexágonos (opcional) -->
+    <img class="honeycomb decor" src="Imagenes/colmena2.png" alt="Panal de abejas" />
+
+    <!-- Árboles y césped (puedes usar 1 o 2 imágenes) -->
+    <img class="trees-left decor" src="Imagenes/tronco1.png" alt="Árboles lado izquierdo" />
+    <img class="trees-right decor" src="Imagenes/Arbusto.png" alt="Árboles lado derecho" />
+    
+
+    <!-- Winnie Pooh con tarro de miel -->
+    <img class="pooh decor" src="Imagenes/Winnie.png" alt="Winnie Pooh con tarro de miel" />
+
+     <!-- Pasto -->
+    <img class="grass decor" src="Imagenes/pasto.png" alt="pasto" />
+
+
+    <!-- (Opcional) Abejitas como imagen única reutilizada -->
+    <img class="bee decor" src="assets/bee.png" alt="" aria-hidden="true" />
+    <img class="bee decor" src="assets/bee.png" alt="" aria-hidden="true" />
+  </main>
+</body>
+</html>

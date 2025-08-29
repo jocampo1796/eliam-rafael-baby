@@ -1,0 +1,246 @@
+:root{
+  --blue: #cfe1ff;       /* Azul cielo fondo */
+  --blue-200:#b7d0ff;
+  --cream:#fbf7ef;       /* Crema de la tarjeta */
+  --gold:#f4c95d;
+  --text:#444a57;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(1200px 700px at 15% -10%, #ffd77333 0 60%, transparent 61%),
+    radial-gradient(900px 600px at 110% 10%, #ffd77333 0 60%, transparent 61%),
+    linear-gradient(180deg, var(--blue), var(--blue-200));
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  display:grid;
+  place-items:center;
+  padding:28px;
+}
+
+/* Tarjeta */
+.card{
+  width:min(560px, 92vw);
+  aspect-ratio: 2 / 3;
+  background:var(--cream);
+  border-radius:22px;
+  box-shadow:0 20px 60px #486aa533, 0 6px 14px #486aa526;
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+/* Confeti dorado sutil */
+.card::before{
+  content:"";
+  position:absolute; inset:-40px; z-index:0;
+  background:
+    radial-gradient(4px 4px at 20% 15%, #f1b84c88 60%, transparent 62%),
+    radial-gradient(3px 3px at 8% 35%, #f1b84c55 60%, transparent 62%),
+    radial-gradient(4px 4px at 92% 25%, #f1b84c66 60%, transparent 62%),
+    radial-gradient(3px 3px at 80% 60%, #f1b84c66 60%, transparent 62%),
+    radial-gradient(2px 2px at 10% 75%, #f1b84c66 60%, transparent 62%),
+    radial-gradient(3px 3px at 94% 82%, #f1b84c66 60%, transparent 62%);
+  pointer-events:none;
+}
+
+/* Cabecera semicircular */
+.arch{
+  position:absolute; left:50%; top:-14%; transform:translateX(-50%);
+  width:120%; height:58%;
+  background:var(--cream);
+  border-radius:50% 50% 0 0 / 80% 80% 0 0;
+  z-index:1;
+  box-shadow:0 12px 0 0 var(--cream);
+}
+
+/* Texto curvo */
+.arcText{ position:absolute; top:10%; left:0; right:0; display:flex; justify-content:center; z-index:4 }
+.arc{ width:min(520px, 88vw); height:120px }
+.arc text{ font-family:'Playfair Display', serif; fill:#7a6a55; font-size:25px; font-weight: 700; letter-spacing:.08em }
+
+/* Titulares */
+.titleBlock{ text-align:center; z-index:2; position:relative; margin-top:30%;}
+.subtitle{ letter-spacing:.12em; color:#7b8ab0; font-weight:600; font-size:clamp(16px, 2.8vw, 26px) }
+.name{ font-family:'Great Vibes', cursive; font-size:clamp(42px, 8vw, 68px); margin:.15em 0 .1em; color:#6b4b2b }
+.lead{ font-family:'Playfair Display', serif; font-size:clamp(16px, 2.6vw, 20px); color:#6d7280 }
+
+/* Fecha y hora */
+.dateRow{
+  margin:30px auto 18px; width:86%;
+  display:grid; grid-template-columns:1fr auto 1fr; gap:16px; align-items:center;
+  font-family:'Playfair Display', serif; color:#56607a
+}
+.pill{ border:1px solid #d6dbe7; padding:10px 14px; border-radius:999px; text-align:center }
+.day{ font-weight:600 }
+.time{ font-weight:600 }
+.monthCol{ text-align:center; line-height:1.05 }
+.month{ font-weight:600 }
+.num{ font-size:30px; font-weight:700; color:#5672c6 }
+
+.venue{ text-align:center; margin:10px 18px 18px; font-size:15px }
+
+/* Cuadrícula 2×2 para los 4 botones */
+.actionsGrid{
+  width: min(460px, 86%);
+  margin: 16px auto 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Botones con icono e igual tamaño */
+.btn{
+  appearance:none; border:0;
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  width:100%; min-height:48px; padding:12px 18px;
+  background:#e4ecff; color:#4a6dd1;
+  border-radius:12px; font-weight:600; text-decoration:none; cursor:pointer;
+  box-shadow: inset 0 -2px 0 #d3e1ff;
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn:hover{ transform:translateY(-1px); filter:brightness(1.02) }
+.btn:active{ transform:none }
+.btn .icon{ width:18px; height:18px; flex:0 0 18px }
+
+/* Específicos */
+.btn-location{ background:#e8f0ff; color:#395ccf; box-shadow: inset 0 -2px 0 #d2defe }
+.btn-rsvp{ background:#25D366; color:#fff }
+.btn-rsvp .icon{ color:#fff }
+
+.btn.amazon{ background:#ff9900; color:#fff }
+.btn.liverpool{ background:#a10045; color:#fff }
+
+
+/* Responsive: 1 columna en móvil */
+@media (max-width: 420px){
+  .actionsGrid{ grid-template-columns: 1fr }
+}
+
+.nofaltes{
+  text-align:center; font-family:'Great Vibes', cursive;
+  font-size:clamp(22px, 4.8vw, 34px); color:#6b4b2b; margin-top:6px
+}
+
+/* DECORACIONES (IMÁGENES) */
+.decor{ position:absolute; pointer-events:none; z-index:3; user-select:none }
+
+/* Panal tipo hexágonos (arriba-izquierda) */
+.honeycomb{ left:-15%; top:-5%; width:min(300px, 36vw); transform:rotate(-45deg); transform-origin:center; z-index: 3; }
+
+/* Colmena colgante (arriba-derecha) */
+.beehive{ right:-10%; top: -10px; width:min(300px, 30vw); height:auto; z-index: 3; }
+
+/* Árboles inferiores */
+.trees-left{ left:-5%; bottom:0; width:50%; max-width:220px; height:auto }
+.trees-right{ right:-15%; bottom:0;bottom: 5%; width:280px; height:auto }
+
+/* Winnie Pooh centrado abajo */
+.pooh{ left:50%; bottom:-5%; transform:translateX(-50%); width: 350px; height:auto; z-index:4 }
+
+/* pasto */
+.grass{position:absolute; left: 0; right: 0; bottom:0; width: 100%; height:25%; z-index:1;}
+
+
+/* Abejas pequeñas opcionales con animación */
+.bee{ width:54px; height:auto; animation: buzz 7s ease-in-out infinite }
+.bee:nth-of-type(1){ left:12%; top:72%; animation-delay:0s }
+.bee:nth-of-type(2){ left:76%; top:66%; animation-delay:1.2s }
+@keyframes buzz{
+  0%{ transform:translate(0,0) rotate(0) }
+  20%{ transform:translate(10px,-8px) rotate(-6deg) }
+  40%{ transform:translate(-6px,-14px) rotate(8deg) }
+  60%{ transform:translate(8px,2px) rotate(-4deg) }
+  80%{ transform:translate(-8px,10px) rotate(6deg) }
+  100%{ transform:translate(0,0) rotate(0) }
+}
+
+/* Responsivo */
+@media (max-width:380px){
+  .card{ border-radius:16px }
+  .bee{ display:none }
+}
+/* ──────────────────────────────────────────
+   LAPTOP / DESKTOP (≥1024px)
+   ──────────────────────────────────────────*/
+@media (min-width: 1024px){
+  .card{ width: 600px } /* un pelín más ancha en laptop */
+
+  .arcText{ top: 8% }
+  .arc text{ font-size: 24px; letter-spacing: .1em }
+
+  .titleBlock{ margin-top: 26% }
+  .name{ font-size: clamp(48px, 6.8vw, 72px) }
+
+  .honeycomb{ width: 300px; left: -12%; top: -6% }
+  .beehive{ width: 300px; right: -8%; top: -10px }
+
+  .pooh{ width: 360px; bottom: -4% }
+  .grass{ height: 25% } /* mantiene 25% en escritorio */
+
+  .actionsGrid{ width: 520px } /* botones un poco más anchos */
+}
+
+/* ──────────────────────────────────────────
+   MÓVILES GENÉRICOS (≤420px)
+   iPhone 12–15 (~390 px) queda incluido
+   ──────────────────────────────────────────*/
+@media (max-width: 420px){
+  .actionsGrid{ grid-template-columns: 1fr } /* botones en una columna */
+  .btn{ min-height: 46px; padding: 12px 16px; font-size: 15px }
+
+  .arcText{ top: 9% }
+  .arc text{ font-size: 20px; letter-spacing: .08em }
+
+  .titleBlock{ margin-top: 24% }
+  .subtitle{ font-size: 18px }
+  .name{ font-size: clamp(40px, 10vw, 60px) }
+  .lead{ font-size: 16px }
+
+  .dateRow{ gap: 10px }
+  .pill{ padding: 8px 12px }
+  .num{ font-size: 26px }
+
+  /* panales/colmena más contenidos */
+  .honeycomb{ width: 44vw; left: -10%; top: -6% }
+  .beehive{ width: 42vw; right: -8%; top: -6px }
+
+  /* pasto ligeramente más alto y Pooh proporcional */
+  .grass{ height: 28% }
+  .pooh{ width: 300px; bottom: -3% }
+
+  /* abejas fuera en móvil para limpieza y rendimiento */
+  .bee{ display:none }
+}
+
+/* ──────────────────────────────────────────
+   iPHONE 12–15 FINO (375–399 px aprox.)
+   ──────────────────────────────────────────*/
+@media (max-width: 399px){
+  .arc text{ font-size: 19px }
+  .titleBlock{ margin-top: 23% }
+  .name{ font-size: clamp(38px, 9.6vw, 56px) }
+  .grass{ height: 30% }  /* un poco más alto para enmarcar a Pooh */
+  .pooh{ width: 290px }
+}
+
+/* ──────────────────────────────────────────
+   SAMSUNG S24 FINO (~360 px)
+   ──────────────────────────────────────────*/
+@media (max-width: 370px){
+  .arc text{ font-size: 18px }
+  .subtitle{ font-size: 16px }
+  .lead{ font-size: 15px }
+  .pill{ padding: 7px 10px }
+  .num{ font-size: 24px }
+
+  .honeycomb{ width: 48vw; left: -8%; top: -5% }
+  .beehive{ width: 46vw; right: -6%; top: -4px }
+
+  .pooh{ width: 270px; bottom: -2% }
+  .grass{ height: 30% }
+}
